@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script> 
+        <!-- loads in the core app library and other Firestore services -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Cloud Cafe</h1>
+
+        <div class="content">
+
+            <form id="add-cafe-form">
+                <input type="text", name="name" placeholder="Cafe name">
+                <input type="text", name="city" placeholder="Cafe city">
+                <button>Add Cafe</button>
+            </form>
+
+            <ul id="cafe-list"></ul>
+
+        </div>
+
+            <script> // web app's Firebase configuration         
+            //configures the application on the front end to link up with firebase
+            var firebaseConfig = {//object called firebaseConfig which stores API key
+                apiKey: "AIzaSyBtNStv1YujVHT66Z71_loRZgrSnJTd1R4",
+                authDomain: "firestore-db-caece.firebaseapp.com",
+                databaseURL: "https://firestore-db-caece.firebaseio.com",
+                projectId: "firestore-db-caece",
+                storageBucket: "firestore-db-caece.appspot.com",
+                messagingSenderId: "48833626087",
+                appId: "1:48833626087:web:6423a2ea1060e37a"
+            };            
+            firebase.initializeApp(firebaseConfig); // Initialize Firebase
+            const db = firebase.firestore() //refers to database and stores it in the constant
+            // db.settings({timestampsInSnapshots: true }) 
+            //prevents warnings from appearing in console
+            </script>
+
+        <script src="app.js"></script>
+    </body>
+</html>
